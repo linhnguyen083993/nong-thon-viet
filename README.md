@@ -78,7 +78,7 @@ supabase/schema.sql    Tạo bảng, phân quyền, kho ảnh, dữ liệu ban �
 proxy.ts               Bảo vệ /admin, làm mới phiên đăng nhập
 ```
 
-Nội dung lịch mùa vụ nằm trong `components/site/SeasonWheel.tsx`.
+Nội dung lịch mùa vụ nằm trong `components/site/SeasonWheel.tsx`..
 
 ## Cập nhật v2 (thiết kế mới + ảnh sản phẩm)
 
