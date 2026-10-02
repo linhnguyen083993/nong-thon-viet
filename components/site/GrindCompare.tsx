@@ -41,7 +41,7 @@ export function GrindCompare() {
               data-pair={k}
               onClick={() => setPair(k)}
               aria-pressed={pair === k}
-              className={`rounded-full px-5 py-2 text-sm transition-colors ${
+              className={`min-h-11 rounded-full px-5 py-2 text-sm transition-colors ${
                 pair === k ? "bg-ivory text-ink" : "text-ivory/70 hover:text-ivory"
               }`}
             >
@@ -49,17 +49,17 @@ export function GrindCompare() {
             </button>
           ))}
         </div>
-        <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm">
-          <Link data-link="whole" href={`/san-pham/${p.whole.slug}`} className="text-brass-2 underline-offset-4 hover:underline">
+        <div className="mt-6 flex flex-wrap gap-x-6 text-sm">
+          <Link data-link="whole" href={`/san-pham/${p.whole.slug}`} className="inline-flex min-h-11 items-center text-brass-2 underline-offset-4 hover:underline">
             Xem {p.label.toLowerCase()} hạt
           </Link>
-          <Link data-link="ground" href={`/san-pham/${p.ground.slug}`} className="text-brass-2 underline-offset-4 hover:underline">
+          <Link data-link="ground" href={`/san-pham/${p.ground.slug}`} className="inline-flex min-h-11 items-center text-brass-2 underline-offset-4 hover:underline">
             Xem {p.label.toLowerCase()} xay
           </Link>
         </div>
       </div>
 
-      <div data-compare className="relative aspect-[11/6] overflow-hidden rounded-3xl bg-ink-2 select-none">
+      <div data-compare className="relative aspect-[11/6] touch-pan-y overflow-hidden rounded-2xl bg-ink-2 select-none sm:rounded-3xl">
         <Image data-compare-img="ground" src={p.ground.src} alt={p.ground.alt} fill sizes="(min-width: 1024px) 60vw, 100vw" className="object-cover" />
         <div data-compare-top className="absolute inset-0" style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}>
           <Image data-compare-img="whole" src={p.whole.src} alt={p.whole.alt} fill sizes="(min-width: 1024px) 60vw, 100vw" className="object-cover" />

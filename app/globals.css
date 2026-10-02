@@ -54,6 +54,9 @@
     font-weight: 400;
     text-rendering: optimizeLegibility;
   }
+  a, button, [role="button"], label, select, summary { touch-action: manipulation; }
+  html { -webkit-tap-highlight-color: rgb(184 137 59 / 0.18); }
+  body { overflow-x: clip; }
   ::selection { background: var(--color-leaf-2); color: var(--color-ink); }
   :focus-visible { outline: 2px solid var(--color-brass); outline-offset: 3px; border-radius: 6px; }
   @media (prefers-reduced-motion: reduce) {
@@ -62,6 +65,10 @@
   }
 }
 
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar { display: none; }
+}
 @utility font-display { font-family: var(--font-serif); }
 @utility font-ui { font-family: var(--font-sans); }
 

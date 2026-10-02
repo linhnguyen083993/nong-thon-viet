@@ -14,7 +14,7 @@ export function DeleteProductButton({ id, name }: { id: string; name: string }) 
       <input type="hidden" name="id" value={id} />
       <button
         type="submit"
-        className="grid size-10 place-items-center rounded-xl text-rang-soft hover:bg-qua/10 hover:text-qua"
+        className="grid size-11 place-items-center rounded-xl sm:size-10 text-rang-soft hover:bg-qua/10 hover:text-qua"
         aria-label={`Xoá ${name}`}
       >
         <Trash2 className="size-4" />

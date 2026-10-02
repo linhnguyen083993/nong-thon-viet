@@ -25,7 +25,7 @@ export function ProductGrid({ products }: { products: Product[] }) {
       data-filter={value}
       onClick={() => setFilter(value)}
       aria-pressed={filter === value}
-      className={`rounded-full px-4 py-2 text-sm transition-colors ${
+      className={`h-11 shrink-0 rounded-full px-5 text-sm transition-colors ${
         filter === value ? "bg-forest text-ivory" : "bg-stone-2 text-ink/75 hover:bg-leaf/15"
       }`}
     >
@@ -36,12 +36,16 @@ export function ProductGrid({ products }: { products: Product[] }) {
   return (
     <div data-product-grid>
       {cats.length > 1 && (
-        <div role="group" aria-label="Lọc theo nhóm sản phẩm" className="mb-10 flex flex-wrap gap-2">
+        <div
+          role="group"
+          aria-label="Lọc theo nhóm sản phẩm"
+          className="no-scrollbar -mx-5 mb-8 flex gap-2 overflow-x-auto px-5 sm:mx-0 sm:mb-10 sm:flex-wrap sm:overflow-visible sm:px-0"
+        >
           {chip("all", "Tất cả", products.length)}
           {cats.map((c) => chip(c, CATEGORY_LABEL[c], products.filter((p) => p.category === c).length))}
         </div>
       )}
-      <motion.ul layout className="grid gap-x-6 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
+      <motion.ul layout className="grid grid-cols-2 gap-x-3 gap-y-8 sm:gap-x-6 sm:gap-y-14 lg:grid-cols-3">
         <AnimatePresence mode="popLayout" initial={false}>
           {shown.map((p) => (
             <motion.li

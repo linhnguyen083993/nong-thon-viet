@@ -12,7 +12,7 @@ export default async function SettingsPage() {
 
   return (
     <div className="mx-auto max-w-5xl">
-      <h1 className="display-tight text-5xl">Thông tin hợp tác xã</h1>
+      <h1 className="display-tight text-4xl sm:text-5xl">Thông tin hợp tác xã</h1>
       <p className="mt-2 mb-10 max-w-xl text-sm text-rang-soft">
         Hiển thị ở phần giới thiệu, liên hệ và chân trang của website.
       </p>

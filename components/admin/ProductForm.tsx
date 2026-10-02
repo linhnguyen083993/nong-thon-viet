@@ -100,7 +100,7 @@ export function ProductForm({ product }: { product?: Product }) {
             <input id="sort_order" name="sort_order" type="number" defaultValue={p.sort_order} className={inputCls} />
           </Field>
           <div className="flex items-end pb-2.5">
-            <label className="flex cursor-pointer items-center gap-3 font-ui text-sm font-semibold">
+            <label className="flex min-h-11 cursor-pointer items-center gap-3 font-ui text-sm font-semibold">
               <input
                 type="checkbox"
                 name="is_published"
@@ -132,9 +132,9 @@ export function ProductForm({ product }: { product?: Product }) {
           <p className="mt-0.5 font-ui text-xs text-rang-soft">
             Ví dụ: Quy cách đóng gói, Bảo quản, Hạn dùng. Hai dòng đầu hiện ở trang chủ.
           </p>
-          <ul className="mt-3 space-y-2.5">
+          <ul className="mt-3 space-y-4 sm:space-y-2.5">
             {specs.map((s, i) => (
-              <li key={i} className="grid grid-cols-[minmax(0,2fr)_minmax(0,3fr)_auto] gap-2">
+              <li key={i} className="grid grid-cols-[minmax(0,1fr)_auto] gap-x-2 gap-y-1.5 sm:gap-y-2 sm:grid-cols-[minmax(0,2fr)_minmax(0,3fr)_auto]">
                 <input
                   aria-label={`Tên thông số ${i + 1}`}
                   value={s.label}
@@ -152,7 +152,7 @@ export function ProductForm({ product }: { product?: Product }) {
                 <button
                   type="button"
                   onClick={() => setSpecs((rows) => rows.filter((_, j) => j !== i))}
-                  className="grid size-11 place-items-center rounded-xl text-rang-soft hover:bg-qua/10 hover:text-qua"
+                  className="grid size-11 place-items-center rounded-xl text-rang-soft hover:bg-qua/10 hover:text-qua max-sm:col-start-2 max-sm:row-span-2 max-sm:row-start-1 max-sm:self-center"
                   aria-label={`Xoá thông số ${s.label || i + 1}`}
                 >
                   <Trash2 className="size-4" />
@@ -163,23 +163,23 @@ export function ProductForm({ product }: { product?: Product }) {
           <button
             type="button"
             onClick={() => setSpecs((rows) => [...rows, { label: "", value: "" }])}
-            className="mt-3 inline-flex items-center gap-1.5 rounded-full px-3 py-2 font-ui text-sm font-semibold text-la hover:bg-la/10"
+            className="mt-3 inline-flex min-h-11 items-center gap-1.5 rounded-full px-3 font-ui text-sm font-semibold text-la hover:bg-la/10"
           >
             <Plus className="size-4" aria-hidden="true" /> Thêm thông số
           </button>
         </fieldset>
 
-        <div className="flex flex-wrap items-center gap-3 border-t border-rang/10 pt-6">
+        <div className="sticky bottom-0 z-10 -mx-5 flex items-center gap-3 border-t border-rang/10 bg-hoa/95 px-5 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] backdrop-blur sm:static sm:mx-0 sm:flex-wrap sm:bg-transparent sm:px-0 sm:pt-6 sm:pb-0 sm:backdrop-blur-none">
           <SubmitButton pending={pending} pendingText="Đang lưu…">{p.id ? "Lưu thay đổi" : "Thêm sản phẩm"}</SubmitButton>
-          <Link href="/admin" className="rounded-full px-5 py-3 font-ui text-sm font-semibold text-rang-soft hover:bg-rang/5">
+          <Link href="/admin" className="inline-flex min-h-11 items-center rounded-full px-5 font-ui text-sm font-semibold text-rang-soft hover:bg-rang/5">
             Huỷ
           </Link>
         </div>
       </div>
 
-      <aside className="space-y-6">
+      <aside className="order-first space-y-6 lg:order-none">
         <Field label="Ảnh sản phẩm" htmlFor="image" hint="JPG, PNG hoặc WebP, tối đa 5 MB. Tỉ lệ 4:5 hiển thị đẹp nhất." error={fe.image}>
-          <div className={`relative aspect-[4/5] overflow-hidden rounded-3xl ${ART_BG[art]}`}>
+          <div className={`relative aspect-[4/3] overflow-hidden rounded-3xl lg:aspect-[4/5] ${ART_BG[art]}`}>
             {preview && !removeImage ? (
               // eslint-disable-next-line @next/next/no-img-element
               <img src={preview} alt="Xem trước ảnh sản phẩm" className="absolute inset-0 size-full object-cover" />
@@ -209,7 +209,7 @@ export function ProductForm({ product }: { product?: Product }) {
             }}
           />
           {p.image_url && (
-            <label className="mt-3 flex items-center gap-2 font-ui text-sm">
+            <label className="mt-1 flex min-h-11 items-center gap-2 font-ui text-sm">
               <input
                 type="checkbox"
                 name="remove_image"

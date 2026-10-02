@@ -5,7 +5,7 @@ import { Wordmark } from "./Logo";
 export function Footer({ settings }: { settings: SiteSettings }) {
   return (
     <footer className="bg-forest text-ivory/65">
-      <div className="mx-auto grid max-w-7xl gap-10 px-5 pt-16 pb-12 text-sm sm:px-8 md:grid-cols-[1.4fr_1fr_1fr]">
+      <div className="mx-auto grid max-w-7xl gap-8 px-5 pt-14 pb-10 text-sm sm:px-8 md:grid-cols-[1.4fr_1fr_1fr] md:gap-10 md:pt-16 md:pb-12">
         <div>
           <Wordmark />
           <p className="mt-6 max-w-sm leading-relaxed">{settings.full_name}</p>
@@ -19,13 +19,13 @@ export function Footer({ settings }: { settings: SiteSettings }) {
         </div>
         <div>
           <p className="text-ivory">Điện thoại</p>
-          <a href={telHref(settings.phone)} className="mt-2 inline-block tabular-nums hover:text-ivory">
+          <a href={telHref(settings.phone)} className="-my-1 inline-flex min-h-11 items-center tabular-nums hover:text-ivory">
             {formatPhone(settings.phone)}
           </a>
           {settings.email && (
             <>
               <p className="mt-5 text-ivory">Email</p>
-              <a href={`mailto:${settings.email}`} className="mt-2 inline-block hover:text-ivory">
+              <a href={`mailto:${settings.email}`} className="inline-flex min-h-11 items-center hover:text-ivory">
                 {settings.email}
               </a>
             </>
@@ -33,7 +33,7 @@ export function Footer({ settings }: { settings: SiteSettings }) {
         </div>
       </div>
       <div className="border-t border-ivory/10">
-        <p className="mx-auto max-w-7xl px-5 py-6 text-xs text-ivory/40 sm:px-8">
+        <p className="mx-auto max-w-7xl px-5 pt-6 pb-[calc(5.75rem+env(safe-area-inset-bottom))] text-xs text-ivory/45 sm:px-8 lg:pb-6">
           © {new Date().getFullYear()} {settings.short_name}. Trang giới thiệu sản phẩm, không bán hàng trực tuyến.
         </p>
       </div>

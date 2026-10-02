@@ -19,7 +19,7 @@ export default async function AdminProductsPage({ searchParams }: PageProps<"/ad
     <div className="mx-auto max-w-5xl">
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
-          <h1 className="display-tight text-5xl">Sản phẩm</h1>
+          <h1 className="display-tight text-4xl sm:text-5xl">Sản phẩm</h1>
           <p className="mt-2 text-sm text-rang-soft">
             {products.length} sản phẩm · {products.filter((p) => p.is_published).length} đang hiển thị
           </p>
@@ -51,9 +51,9 @@ export default async function AdminProductsPage({ searchParams }: PageProps<"/ad
       ) : (
         <ul className="mt-10 divide-y divide-rang/10 rounded-3xl border border-rang/10 bg-white">
           {products.map((p) => (
-            <li key={p.id} className="flex items-center gap-4 p-4 sm:gap-5 sm:p-5">
+            <li key={p.id} className="flex flex-wrap items-center gap-x-4 gap-y-2 p-4 sm:flex-nowrap sm:gap-5 sm:p-5">
               <ProductVisual product={p} sizes="64px" className="size-16 shrink-0 rounded-2xl" />
-              <div className="min-w-0 flex-1">
+              <div className="min-w-0 flex-1 basis-40 sm:basis-auto">
                 <div className="flex flex-wrap items-center gap-2">
                   <Link href={`/admin/san-pham/${p.id}`} className="truncate font-display text-lg font-semibold hover:underline">
                     {p.name}
@@ -66,13 +66,13 @@ export default async function AdminProductsPage({ searchParams }: PageProps<"/ad
                   {CATEGORY_LABEL[p.category]} · /san-pham/{p.slug}
                 </p>
               </div>
-              <div className="flex shrink-0 items-center gap-1">
+              <div className="ml-auto flex shrink-0 items-center gap-1">
                 <form action={togglePublish}>
                   <input type="hidden" name="id" value={p.id} />
                   <input type="hidden" name="next" value={String(!p.is_published)} />
                   <button
                     type="submit"
-                    className="grid size-10 place-items-center rounded-xl text-rang-soft hover:bg-rang/5 hover:text-rang"
+                    className="grid size-11 place-items-center rounded-xl sm:size-10 text-rang-soft hover:bg-rang/5 hover:text-rang"
                     aria-label={p.is_published ? `Ẩn ${p.name} khỏi website` : `Hiển thị ${p.name} trên website`}
                     title={p.is_published ? "Ẩn khỏi website" : "Hiển thị trên website"}
                   >
@@ -81,7 +81,7 @@ export default async function AdminProductsPage({ searchParams }: PageProps<"/ad
                 </form>
                 <Link
                   href={`/admin/san-pham/${p.id}`}
-                  className="grid size-10 place-items-center rounded-xl text-rang-soft hover:bg-rang/5 hover:text-rang"
+                  className="grid size-11 place-items-center rounded-xl sm:size-10 text-rang-soft hover:bg-rang/5 hover:text-rang"
                   aria-label={`Sửa ${p.name}`}
                 >
                   <Pencil className="size-4" />

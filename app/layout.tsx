@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import "@fontsource-variable/noto-serif-display/wdth.css";
-import "@fontsource/be-vietnam-pro/300.css";
 import "@fontsource/be-vietnam-pro/400.css";
 import "@fontsource/be-vietnam-pro/500.css";
 import "@fontsource/be-vietnam-pro/600.css";
@@ -16,10 +15,12 @@ export const metadata: Metadata = {
   description:
     "Hợp Tác Xã Nông Nghiệp Và Dịch Vụ Nông Thôn Việt: cà phê bột, mật ong hoa cà phê, tiêu đen và tiêu sọ từ xã Ea Nuôl (vùng Buôn Đôn), Đắk Lắk.",
   openGraph: { type: "website", locale: "vi_VN", siteName: "Nông Thôn Việt" },
+  formatDetection: { telephone: false, email: false, address: false },
 };
 
 export const viewport: Viewport = {
   themeColor: "#1d1612",
+  viewportFit: "cover",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

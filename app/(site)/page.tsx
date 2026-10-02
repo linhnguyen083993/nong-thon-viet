@@ -45,10 +45,10 @@ export default async function HomePage() {
       <main>
         <Hero phone={settings.phone} taxCode={settings.tax_code} founded={settings.founded_on} />
 
-        <section id="san-pham" className="px-5 py-24 sm:px-8 md:py-32">
+        <section id="san-pham" className="px-5 py-16 sm:px-8 md:py-32">
           <div className="mx-auto max-w-7xl">
-            <div className="mb-12 grid gap-6 md:grid-cols-2 md:items-end">
-              <h2 className="serif-title text-[clamp(2.4rem,4.6vw,3.75rem)]">Sản phẩm</h2>
+            <div className="mb-8 grid gap-4 md:mb-12 md:grid-cols-2 md:items-end md:gap-6">
+              <h2 className="serif-title text-[clamp(2.1rem,4.6vw,3.75rem)]">Sản phẩm</h2>
               <p className="prose-body text-muted md:justify-self-end md:text-right">
                 Cà phê rang xay, mật ong từ mùa hoa cà phê, tiêu đen và tiêu sọ — sơ chế và đóng gói tại vùng trồng.
               </p>
@@ -57,31 +57,31 @@ export default async function HomePage() {
           </div>
         </section>
 
-        <section id="quy-trinh" className="bg-stone-2 px-5 py-24 sm:px-8 md:py-28">
+        <section id="quy-trinh" className="bg-stone-2 px-5 py-16 sm:px-8 md:py-28">
           <div className="mx-auto max-w-7xl">
             <Process />
           </div>
         </section>
 
         {hasPepperPhotos && (
-          <section id="hat-va-xay" className="grain bg-ink px-5 py-24 text-ivory sm:px-8 md:py-32">
+          <section id="hat-va-xay" className="grain bg-ink px-5 py-16 text-ivory sm:px-8 md:py-32">
             <div className="mx-auto max-w-7xl">
               <GrindCompare />
             </div>
           </section>
         )}
 
-        <section id="hop-tac-xa" className="px-5 py-24 sm:px-8 md:py-32">
+        <section id="hop-tac-xa" className="px-5 py-16 sm:px-8 md:py-32">
           <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-12">
             <div className="lg:col-span-6">
-              <h2 className="serif-title text-[clamp(2.4rem,4.6vw,3.75rem)]">Một hợp tác xã, nhiều vườn nhà</h2>
+              <h2 className="serif-title text-[clamp(2.1rem,4.6vw,3.75rem)]">Một hợp tác xã, nhiều vườn nhà</h2>
               <p className="prose-body mt-6 text-lg text-ink/80">{settings.intro}</p>
             </div>
-            <div className="rounded-3xl border border-leaf/20 bg-stone-2/60 p-7 sm:p-9 lg:col-span-5 lg:col-start-8">
+            <div className="rounded-2xl border border-leaf/20 bg-stone-2/60 p-5 sm:rounded-3xl sm:p-9 lg:col-span-5 lg:col-start-8">
               <h3 className="text-sm font-medium text-muted">Hồ sơ đăng ký</h3>
               <dl className="mt-4 divide-y divide-ink/10">
                 {registry.map(([k, v]) => (
-                  <div key={k} className="grid grid-cols-[8.5rem_1fr] gap-4 py-3.5 text-[0.95rem]">
+                  <div key={k} className="grid grid-cols-[6.5rem_1fr] gap-3 py-3 text-[0.95rem] sm:grid-cols-[8.5rem_1fr] sm:gap-4 sm:py-3.5">
                     <dt className="text-muted">{k}</dt>
                     <dd className="tabular-nums">{v}</dd>
                   </div>
@@ -91,10 +91,10 @@ export default async function HomePage() {
           </div>
         </section>
 
-        <section id="mua-vu" className="bg-forest px-5 py-24 text-ivory sm:px-8 md:py-32">
+        <section id="mua-vu" className="bg-forest px-5 py-16 text-ivory sm:px-8 md:py-32">
           <div className="mx-auto max-w-7xl">
             <div className="mb-14 max-w-2xl">
-              <h2 className="serif-title text-[clamp(2.4rem,4.6vw,3.75rem)]">Một năm ở vườn</h2>
+              <h2 className="serif-title text-[clamp(2.1rem,4.6vw,3.75rem)]">Một năm ở vườn</h2>
               <p className="prose-body mt-5 text-ivory/75">
                 Mỗi sản phẩm gắn với một mùa. Chọn một tháng để xem vườn cà phê và hồ tiêu ở Ea Nuôl đang ra sao.
               </p>
@@ -104,16 +104,16 @@ export default async function HomePage() {
           </div>
         </section>
 
-        <section id="lien-he" className="px-5 py-24 sm:px-8 md:py-32">
+        <section id="lien-he" className="px-5 py-16 sm:px-8 md:py-32">
           <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-12 lg:items-center">
             <div className="lg:col-span-5">
-              <h2 className="serif-title text-[clamp(2.4rem,4.6vw,3.75rem)]">Hợp tác phân phối</h2>
+              <h2 className="serif-title text-[clamp(2.1rem,4.6vw,3.75rem)]">Hợp tác phân phối</h2>
               <p className="prose-body mt-6 text-lg text-ink/80">{settings.distribution}</p>
               <p className="prose-body mt-4 text-muted">
                 Hỏi về quy cách đóng gói, số lượng hay điểm bán gần bạn — gọi trực tiếp cho hợp tác xã.
               </p>
             </div>
-            <div className="grain rounded-[2rem] bg-forest p-8 text-ivory sm:p-12 lg:col-span-6 lg:col-start-7">
+            <div className="grain rounded-3xl bg-forest p-6 text-ivory sm:rounded-[2rem] sm:p-12 lg:col-span-6 lg:col-start-7">
               <p className="text-sm text-ivory/55">Điện thoại</p>
               <a href={telHref(settings.phone)} className="mt-2 block w-fit serif-title text-[clamp(2.5rem,5vw,4.25rem)] tabular-nums hover:text-brass-2">
                 {formatPhone(settings.phone)}
@@ -129,7 +129,7 @@ export default async function HomePage() {
               <div className="mt-10 border-t border-ivory/12 pt-8">
                 <p className="text-sm text-ivory/55">Địa chỉ</p>
                 <p className="mt-2 text-lg leading-relaxed">{settings.address}</p>
-                <a href={mapsHref} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-2 text-sm text-leaf-2 underline-offset-4 hover:underline">
+                <a href={mapsHref} target="_blank" rel="noopener noreferrer" className="-ml-1 mt-2 inline-flex min-h-11 items-center gap-2 px-1 text-sm text-leaf-2 underline-offset-4 hover:underline">
                   <MapPin className="size-4" aria-hidden="true" /> Mở bản đồ chỉ đường
                 </a>
                 {settings.email && (

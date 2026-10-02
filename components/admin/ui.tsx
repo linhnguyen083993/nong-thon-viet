@@ -4,7 +4,7 @@ import { useFormStatus } from "react-dom";
 import { Loader2 } from "lucide-react";
 
 export const inputCls =
-  "w-full rounded-xl border border-rang/15 bg-white px-3.5 py-2.5 font-ui text-[0.95rem] text-rang outline-none transition-[border-color,box-shadow] placeholder:text-rang/35 focus:border-la focus:ring-3 focus:ring-la/15 aria-invalid:border-qua";
+  "w-full rounded-xl border border-rang/15 bg-white px-3.5 py-2.5 font-ui text-base text-rang sm:text-[0.95rem] outline-none transition-[border-color,box-shadow] placeholder:text-rang/35 focus:border-la focus:ring-3 focus:ring-la/15 aria-invalid:border-qua";
 
 export function Field({
   label,

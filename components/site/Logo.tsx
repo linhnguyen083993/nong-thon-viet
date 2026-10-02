@@ -25,7 +25,7 @@ export function Wordmark({ tone = "light" }: { tone?: "dark" | "light" }) {
       <BlossomMark className="size-7 shrink-0" />
       <span className="leading-none">
         <span className="block font-display text-[1.05rem] font-medium tracking-tight">Nông Thôn Việt</span>
-        <span className="mt-1 block font-ui text-[0.68rem] opacity-60">Hợp tác xã · Ea Nuôl, Đắk Lắk</span>
+        <span className="mt-1 block font-ui text-xs opacity-60">Hợp tác xã · Ea Nuôl, Đắk Lắk</span>
       </span>
     </span>
   );

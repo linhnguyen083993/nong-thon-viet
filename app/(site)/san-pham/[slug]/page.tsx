@@ -34,7 +34,7 @@ export default async function ProductPage({ params }: PageProps<"/san-pham/[slug
   const others = all
     .filter((p) => p.id !== product.id)
     .sort((a, b) => Number(b.category === product.category) - Number(a.category === product.category))
-    .slice(0, 3);
+    .slice(0, 4);
 
   return (
     <>
@@ -42,25 +42,25 @@ export default async function ProductPage({ params }: PageProps<"/san-pham/[slug
       <main className="px-5 pt-28 pb-24 sm:px-8 md:pt-32">
         <div className="mx-auto max-w-7xl">
           <nav aria-label="Đường dẫn" className="text-sm text-muted">
-            <ol className="flex flex-wrap items-center gap-1.5">
-              <li><Link href="/" className="hover:text-ink">Trang chủ</Link></li>
+            <ol className="flex flex-wrap items-center gap-x-1">
+              <li><Link href="/" className="inline-flex min-h-11 items-center hover:text-ink">Trang chủ</Link></li>
               <li aria-hidden="true"><ChevronRight className="size-3.5" /></li>
-              <li><Link href="/#san-pham" className="hover:text-ink">Sản phẩm</Link></li>
+              <li><Link href="/#san-pham" className="inline-flex min-h-11 items-center hover:text-ink">Sản phẩm</Link></li>
               <li aria-hidden="true"><ChevronRight className="size-3.5" /></li>
-              <li aria-current="page" className="text-ink">{product.name}</li>
+              <li aria-current="page" className="py-2 text-ink">{product.name}</li>
             </ol>
           </nav>
 
-          <article className="mt-8 grid gap-10 lg:grid-cols-12 lg:gap-14">
+          <article className="mt-2 grid gap-8 sm:mt-6 lg:grid-cols-12 lg:gap-14">
             <ProductVisual
               product={product}
               priority
               sizes="(min-width: 1024px) 55vw, 100vw"
-              className="aspect-[4/3] rounded-[2rem] lg:sticky lg:top-28 lg:col-span-7 lg:self-start"
+              className="aspect-[4/3] rounded-2xl sm:rounded-[2rem] lg:sticky lg:top-28 lg:col-span-7 lg:self-start"
             />
             <div className="lg:col-span-5">
               <p className="text-sm text-muted">{CATEGORY_LABEL[product.category]}</p>
-              <h1 className="mt-2 serif-title text-[clamp(2.6rem,5vw,4.25rem)]">{product.name}</h1>
+              <h1 className="mt-2 serif-title text-[clamp(2.3rem,5vw,4.25rem)]">{product.name}</h1>
               <p className="prose-body mt-5 text-lg text-ink/85">{product.short_description}</p>
               <div className="mt-6 space-y-4">
                 {paragraphs(product.description).map((para, i) => (
@@ -71,7 +71,7 @@ export default async function ProductPage({ params }: PageProps<"/san-pham/[slug
               {product.specs.length > 0 && (
                 <dl className="mt-10 divide-y divide-ink/10 border-y border-ink/10">
                   {product.specs.map((s) => (
-                    <div key={s.label} className="grid grid-cols-[8.5rem_1fr] gap-4 py-3.5 text-[0.95rem]">
+                    <div key={s.label} className="grid grid-cols-[6.5rem_1fr] gap-3 py-3 text-[0.95rem] sm:grid-cols-[8.5rem_1fr] sm:gap-4 sm:py-3.5">
                       <dt className="text-muted">{s.label}</dt>
                       <dd>{s.value}</dd>
                     </div>
@@ -79,7 +79,7 @@ export default async function ProductPage({ params }: PageProps<"/san-pham/[slug
                 </dl>
               )}
 
-              <div className="grain mt-10 rounded-3xl bg-forest p-7 text-ivory">
+              <div className="grain mt-8 rounded-2xl bg-forest p-6 text-ivory sm:mt-10 sm:rounded-3xl sm:p-7">
                 <p className="serif-title text-2xl">Muốn lấy hàng hoặc làm đại lý?</p>
                 <p className="mt-2 text-sm leading-relaxed text-ivory/70">
                   Trang này chỉ giới thiệu sản phẩm. Liên hệ hợp tác xã để hỏi quy cách, số lượng và điểm bán gần bạn.
@@ -92,9 +92,9 @@ export default async function ProductPage({ params }: PageProps<"/san-pham/[slug
           </article>
 
           {others.length > 0 && (
-            <section className="mt-28">
-              <h2 className="serif-title text-[clamp(2rem,3.6vw,2.75rem)]">Có thể bạn quan tâm</h2>
-              <ul className="mt-10 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+            <section className="mt-20 md:mt-28">
+              <h2 className="serif-title text-[clamp(1.75rem,3.6vw,2.75rem)]">Có thể bạn quan tâm</h2>
+              <ul className="mt-8 grid grid-cols-2 gap-x-3 gap-y-8 sm:gap-x-6 lg:grid-cols-4">
                 {others.map((p) => (
                   <li key={p.id}><ProductCard product={p} /></li>
                 ))}
