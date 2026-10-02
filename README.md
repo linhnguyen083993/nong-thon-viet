@@ -87,3 +87,5 @@ Nội dung lịch mùa vụ nằm trong `components/site/SeasonWheel.tsx`.
   đổi tên "Tiêu đen hạt"/"Tiêu sọ hạt" và thêm "Tiêu đen xay", "Tiêu sọ xay".
 - Ảnh có sẵn cho cả 6 sản phẩm nằm trong `public/images/`. Ảnh tải lên từ trang quản trị sẽ thay thế ảnh này.
 - Phần "Nguyên hạt hay xay sẵn?" dùng 4 ảnh cố định trong `public/images/` và chỉ hiện khi đủ 4 sản phẩm tiêu.
+
+- Deploy làn đầu
